@@ -1,7 +1,7 @@
 name: native_swiftui_pastebutton_and_textfield
 description: This is a plugin that provides a paste button and text field from Native SwiftUI as widgets in Flutter.
 version: 0.0.1
-homepage:
+homepage: https://github.com/isolateV/native_swiftui_pastebutton_and_textfield/tree/main
 
 environment:
   sdk: '>=3.1.0 <4.0.0'
