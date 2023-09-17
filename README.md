@@ -13,15 +13,15 @@ just need to check the versions of the 3 items.
 
 ### 1
 
-(https://user-images.githubusercontent.com/124323250/268514541-e7242f78-39df-4520-8f35-b205282882b1.png)
+![p1](https://user-images.githubusercontent.com/124323250/268514541-e7242f78-39df-4520-8f35-b205282882b1.png)
 
 ### 2
 
-(https://user-images.githubusercontent.com/124323250/268514547-94f3ae56-d92c-41ff-ad2d-800a596d9d48.png)
+![p2](https://user-images.githubusercontent.com/124323250/268514547-94f3ae56-d92c-41ff-ad2d-800a596d9d48.png)
 
 ### 3
 
-(https://user-images.githubusercontent.com/124323250/268514549-c63c5735-1c32-4aa2-9659-435b5c657d45.png)
+![p3](https://user-images.githubusercontent.com/124323250/268514549-c63c5735-1c32-4aa2-9659-435b5c657d45.png)
 
 
 
