@@ -13,15 +13,15 @@ just need to check the versions of the 3 items.
 
 ### 1
 
-![p1](https://user-images.githubusercontent.com/124323250/268514541-e7242f78-39df-4520-8f35-b205282882b1.png)
+<img width="1063" alt="스크린샷 2023-09-18 오전 1 15 37" src="https://github.com/isolateV/native_swiftui_pastebutton_and_textfield/assets/124323250/e7242f78-39df-4520-8f35-b205282882b1">
 
 ### 2
 
-![p2](https://user-images.githubusercontent.com/124323250/268514547-94f3ae56-d92c-41ff-ad2d-800a596d9d48.png)
+<img width="1018" alt="스크린샷 2023-09-18 오전 1 15 48" src="https://github.com/isolateV/native_swiftui_pastebutton_and_textfield/assets/124323250/94f3ae56-d92c-41ff-ad2d-800a596d9d48">
 
 ### 3
 
-![p3](https://user-images.githubusercontent.com/124323250/268514549-c63c5735-1c32-4aa2-9659-435b5c657d45.png)
+<img width="1030" alt="스크린샷 2023-09-18 오전 1 16 03" src="https://github.com/isolateV/native_swiftui_pastebutton_and_textfield/assets/124323250/c63c5735-1c32-4aa2-9659-435b5c657d45">
 
 
 
