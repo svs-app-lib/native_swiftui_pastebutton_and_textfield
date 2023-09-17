@@ -1,7 +1,7 @@
 # native_swiftui_pastebutton_and_textfield
 
 This is a plugin that provides a paste button and text field from Native SwiftUI as widgets in Flutter.
-
+This plugin requires Xcode to build, and the executable iOS version must be 16.0 or higher.
 ## Getting Started
 
 This project is a starting point for a Flutter
