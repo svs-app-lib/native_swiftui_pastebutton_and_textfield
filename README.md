@@ -8,7 +8,7 @@ This plugin requires Xcode to build, and the executable iOS version must be 16.0
 In Xcode, you must set the iOS build version to 16.0 or higher.
 Upon initial launch, the iOS target version occasionally reverts to its previous setting, so please double-check.
 I'm not sure if there's a way to specify the minimum deployment version in the plugin. 
-If you know how to set the minimum deployment version within a plugin, please let me know.
+
 just need to check the versions of the 3 items.
 
 ### 1
