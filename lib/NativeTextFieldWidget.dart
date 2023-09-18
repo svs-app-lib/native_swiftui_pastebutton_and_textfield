@@ -8,7 +8,7 @@ class NativeTextFieldWidget extends StatefulWidget {
     super.key,
     required this.width,
     required this.height,
-    this.labelText = "네이티브 입력창 입니다",
+    this.labelText = "",
     required this.onUpdated,
   });
 

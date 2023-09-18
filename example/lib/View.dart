@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
 import 'ViewModel.dart';
 import 'package:native_swiftui_pastebutton_and_textfield/NativePasteButtonWidget.dart';
@@ -58,26 +59,19 @@ class MainPage extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text("플러터 위젯", style: TextStyle(fontSize: 18)),
-                        const SizedBox(height: 5),
-                        TextField(
-                            onChanged: (value) {
-                              context
-                                  .read<MainPageViewModel>()
-                                  .receiveFlutterSideMassage(text: value);
-                            },
-                            decoration: const InputDecoration(
-                                contentPadding: EdgeInsets.fromLTRB(5, 2, 5, 2),
-                                filled: true,
-                                labelText: "플러터 입력창 입니다.",
-                                hintText: "플러터 입력창",
-                                enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Colors.lightBlueAccent,
-                                      width: 1.0,
-                                    )))),
+                        const Text("플러터 위젯(FlutterWidget)", style: TextStyle(fontSize: 18)),
+                        const SizedBox(height: 10),
+                        CupertinoTextField(
+                          placeholder: "플러터 입력창 입니다.",
+                          onChanged: (value) {
+                            context
+                                .read<MainPageViewModel>()
+                                .receiveFlutterSideMassage(text: value);
+                          },
+                        ),
+
                         const SizedBox(
-                          height: 8,
+                          height: 10,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -138,10 +132,11 @@ class MainPage extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
-                        const Text("네이티브 뷰", style: TextStyle(fontSize: 18)),
+                        const Text("네이티브 뷰(Native Platform View)", style: TextStyle(fontSize: 18)),
                         NativeTextFieldWidget(
                           width: 360,
                           height: 60,
+                          labelText: "네이티브 입력창 입니다.",
                           onUpdated: (String? text) {
                             context
                                 .read<MainPageViewModel>()
