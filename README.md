@@ -4,6 +4,20 @@ This is a plugin that provides a paste button and text field from Native SwiftUI
 
 This plugin requires Xcode to build, and the executable iOS version must be 16.0 or higher.
 
+
+### Reasons to Use this Plugin in iOS Flutter Project
+Starting from iOS 16, when attempting to perform a paste operation programmatically, a prompt requesting user confirmation pops up. 
+This prompt always appears for paste operations, except when using the native iOS text field's edit options menu, controls implementing the UIPasteControl, or keyboard shortcuts for pasting. 
+This becomes a significant detriment to user experience. Imagine if you released a note-taking app and a paste pop-up appeared every time; because consumers lack the patience to turn off the notification from settings, that app would likely receive a one-star rating. 😰
+In native iOS apps, the three aforementioned methods allow for prompt-less pasting. However, in Flutter apps, even if you paste through the edit options menu of the CupertinoTextField or use a keyboard shortcut, it's not treated as native pasting. In reality, it's executed programmatically, hence triggering the user permission prompt. Naturally, creating a paste button doesn't allow the implementation of UIPasteControl, leading to the appearance of the prompt.
+
+This issue is not limited to the Flutter framework. Regardless of the framework used, if you create a paste button using a regular button or a gesture detector, the prompt will appear.
+
+This led me to believe there was a need for a native iOS view, prompting the creation of this plugin. The official Flutter page initially suggested using Platform Views to offer a native iOS view by leveraging UIKit components, which seemed to allow the implementation of UIPasteControl. While this works somewhat smoothly during the debugging phase, it results in the annoying prompt popping up in the release phase! Thus, I decided to utilize SwiftUI's PasteButton and adopted an approach to integrate SwiftUI views. This method worked efficiently, and I released an app on the App Store using it. 
+
+Maybe, in the future, Flutter might support UIPasteControl. But for now, this plugin proves invaluable.
+
+
 ## Please ensure you check.
 In Xcode, you must set the iOS build version to 16.0 or higher.
 Upon initial launch, the iOS target version occasionally reverts to its previous setting, so please double-check.
