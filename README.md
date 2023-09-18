@@ -10,10 +10,11 @@ Starting from iOS 16, when attempting to perform a paste operation programmatica
 This prompt always appears for paste operations, except when using the native iOS text field's edit options menu, controls implementing the UIPasteControl, or keyboard shortcuts for pasting. 
 This becomes a significant detriment to user experience. Imagine if you released a note-taking app and a paste pop-up appeared every time; because consumers lack the patience to turn off the notification from settings, that app would likely receive a one-star rating. 😰
 In native iOS apps, the three aforementioned methods allow for prompt-less pasting. However, in Flutter apps, even if you paste through the edit options menu of the CupertinoTextField or use a keyboard shortcut, it's not treated as native pasting. In reality, it's executed programmatically, hence triggering the user permission prompt. Naturally, creating a paste button doesn't allow the implementation of UIPasteControl, leading to the appearance of the prompt.
-
+![KakaoTalk_Video_2023-09-18-11-00-47](https://github.com/isolateV/native_swiftui_pastebutton_and_textfield/assets/124323250/cf298a60-e5ca-422f-b998-00a18a3c2398)
 This issue is not limited to the Flutter framework. Regardless of the framework used, if you create a paste button using a regular button or a gesture detector, the prompt will appear.
 
 This led me to believe there was a need for a native iOS view, prompting the creation of this plugin. The official Flutter page initially suggested using Platform Views to offer a native iOS view by leveraging UIKit components, which seemed to allow the implementation of UIPasteControl. While this works somewhat smoothly during the debugging phase, it results in the annoying prompt popping up in the release phase! Thus, I decided to utilize SwiftUI's PasteButton and adopted an approach to integrate SwiftUI views. This method worked efficiently, and I released an app on the App Store using it. 
+![KakaoTalk_Video_2023-09-18-11-00-53](https://github.com/isolateV/native_swiftui_pastebutton_and_textfield/assets/124323250/f9741ef2-16b1-4a24-ae99-b6fd17226a5e)
 
 Maybe, in the future, Flutter might support UIPasteControl. But for now, this plugin proves invaluable.
 
