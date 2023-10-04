@@ -11,7 +11,7 @@ Follow these steps to use this package
 
 ```yaml
 dependencies:
-  native_swiftui_pastebutton_and_textfield: ^1.0.3
+  native_swiftui_pastebutton_and_textfield: ^1.0.4
 ```
 
 ### Add import package
