@@ -16,3 +16,9 @@
   
 * The option to adjust the size of the text field was eliminated, 
   allowing it to expand fluidly like Flutter’s TextField.
+
+## 1.0.5
+* changed readme.md
+
+## 1.0.6
+* changed readme.md
