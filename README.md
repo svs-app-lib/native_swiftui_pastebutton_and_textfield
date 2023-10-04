@@ -34,15 +34,15 @@ Therefore, adding a widget to your screen will be very simple.
       body: Row(
         children: [
           NativeTextFieldWidget(
-                          width: 360,
-                          height: 60,
                           labelText: "write hint",
                           onUpdated: (String? text) {
                             print(text);
                           },
                         ),
-NativePasteButtonWidget(
-                              color: const Color(0xffe31937),
+      NativePasteButtonWidget(
+                              width: 90,// default width
+                              height: 50,// default height
+                              color: Colors.redAccent,
                               hasLabel: true,
                               onPressed: (String? data) {
                                 print(text);
