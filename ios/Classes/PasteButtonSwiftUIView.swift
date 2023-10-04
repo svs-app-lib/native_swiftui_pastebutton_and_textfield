@@ -12,9 +12,6 @@ struct PasteButtonSwiftUIView: View {
     var method:(String?) -> Void
     var color:Color
     var hasLabel:Bool = false
-    /*
-     self.color = Color(red: seed["red"] as! Double / 255, green: seed["green"] as! Double / 255, blue: seed["blue"] as! Double / 255).opacity(seed["alpha"] as! Double / 255)
-     */
     init(seed:[String: Any] ,bodyColor:Color, method:@escaping(String?) -> Void) {
         buttonID = UUID().uuidString
         self.method = method
