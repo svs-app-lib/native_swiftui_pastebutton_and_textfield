@@ -4,6 +4,54 @@ This is a plugin that provides a paste button and text field from Native SwiftUI
 
 This plugin requires Xcode to build, and the executable iOS version must be 16.0 or higher.
 
+## Getting started
+Follow these steps to use this package
+
+### Add dependency
+
+```yaml
+dependencies:
+  native_swiftui_pastebutton_and_textfield: ^1.0.3
+```
+
+### Add import package
+
+if you want PasteButton
+```dart
+import 'package:native_swiftui_pastebutton_and_textfield/NativePasteButtonWidget.dart';
+```
+
+if you want TextField
+```dart
+import 'package:native_swiftui_pastebutton_and_textfield/NativeTextFieldWidget.dart';
+```
+
+## Easy to use
+The package is designed with maximum adaptation to large screens.<br>
+Therefore, adding a widget to your screen will be very simple.
+```dart
+    Scaffold(
+      body: Row(
+        children: [
+          NativeTextFieldWidget(
+                          width: 360,
+                          height: 60,
+                          labelText: "write hint",
+                          onUpdated: (String? text) {
+                            print(text);
+                          },
+                        ),
+NativePasteButtonWidget(
+                              color: const Color(0xffe31937),
+                              hasLabel: true,
+                              onPressed: (String? data) {
+                                print(text);
+                              },
+                            ),
+        ],
+      ),
+    )
+```
 
 ### Reasons to Use this Plugin in iOS Flutter Project
 Starting from iOS 16, when attempting to perform a paste operation programmatically, a prompt requesting user confirmation pops up. 
