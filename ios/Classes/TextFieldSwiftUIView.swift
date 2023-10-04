@@ -21,7 +21,6 @@ struct TextFieldSwiftUIView: View {
         TextField(self.labelText, text: $textValue.onChange(perform: {
             self.method(self.textValue)
         }))
-        .padding()
         .textFieldStyle(.roundedBorder)
         
     }

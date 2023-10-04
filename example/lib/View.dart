@@ -155,8 +155,8 @@ class MainPage extends StatelessWidget {
                                   width: 9,
                                 ),
                                 NativePasteButtonWidget(
-                                  width: 120,
-                                  height: 70,
+                                  width: 90,
+                                  height: 50,
                                   color: Colors.redAccent,
                                   hasLabel: true,
                                   onPressed: (String? data) {

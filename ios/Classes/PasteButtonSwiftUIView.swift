@@ -12,11 +12,15 @@ struct PasteButtonSwiftUIView: View {
     var method:(String?) -> Void
     var color:Color
     var hasLabel:Bool = false
+    var width:Double
+    var height:Double
     init(seed:[String: Any] ,bodyColor:Color, method:@escaping(String?) -> Void) {
         buttonID = UUID().uuidString
         self.method = method
         self.color = bodyColor
         self.hasLabel = seed["hasLabel"] as! Bool
+        self.width = seed["width"] as! Double
+        self.height = seed["height"] as! Double
     }
     
     var body: some View {
@@ -28,6 +32,7 @@ struct PasteButtonSwiftUIView: View {
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
             self.buttonID = UUID().uuidString
         }
+        .frame(width: self.width, height: self.height)
     }
     
 }

@@ -57,6 +57,7 @@ class PasteButtonPView: NSObject, FlutterPlatformView {
             }
         }).view
         _view.backgroundColor = color
+        _view.translatesAutoresizingMaskIntoConstraints = false
         super.init()
     }
     

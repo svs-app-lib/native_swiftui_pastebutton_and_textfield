@@ -43,6 +43,8 @@ class _NativePasteButtonWidgetState extends State<NativePasteButtonWidget> {
     seed["green"] = widget.color.green;
     seed["blue"] = widget.color.blue;
     seed["hasLabel"] = widget.hasLabel;
+    seed["width"] = widget.width;
+    seed["height"] = widget.height;
 
     NativeSwiftuiPastebuttonAndTextfieldPlatform.instance
         .callNativePasteButton(seed);
@@ -56,23 +58,21 @@ class _NativePasteButtonWidgetState extends State<NativePasteButtonWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Card(
-        color: widget.color,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
-        elevation: widget.elevation,
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(10),
-          child: SizedBox(
-            height: widget.height,
-            width: widget.width,
-            child: UiKitView(
-              viewType: channelUUID,
-              layoutDirection: TextDirection.ltr,
-              creationParamsCodec: const StandardMessageCodec(),
-            ),
+    return Card(
+      color: widget.color,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+      ),
+      elevation: widget.elevation,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(10),
+        child: SizedBox(
+          height: widget.height,
+          width: widget.width,
+          child: UiKitView(
+            viewType: channelUUID,
+            layoutDirection: TextDirection.ltr,
+            creationParamsCodec: const StandardMessageCodec(),
           ),
         ),
       ),
