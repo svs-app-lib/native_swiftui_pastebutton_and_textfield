@@ -6,14 +6,10 @@ import 'native_swiftui_pastebutton_and_textfield_platform_interface.dart';
 class NativeTextFieldWidget extends StatefulWidget {
   const NativeTextFieldWidget({
     super.key,
-    required this.width,
-    required this.height,
     this.labelText = "",
     required this.onUpdated,
   });
 
-  final double width;
-  final double height;
   final String labelText;
   final void Function(String?) onUpdated;
 
@@ -47,22 +43,16 @@ class _NativeTextFieldWidgetState extends State<NativeTextFieldWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          SizedBox(
-            height: widget.height,
-            width: widget.width,
-            child: UiKitView(
-              viewType: channelUUID,
-              layoutDirection: TextDirection.ltr,
-              creationParamsCodec: const StandardMessageCodec(),
-            ),
-          ),
-        ],
-      ),
-    );
+    return LayoutBuilder(builder: (context, dims) {
+      return SizedBox(
+        height: 35,
+        width: dims.maxWidth,
+        child: UiKitView(
+          viewType: channelUUID,
+          layoutDirection: TextDirection.ltr,
+          creationParamsCodec: const StandardMessageCodec(),
+        ),
+      );
+    });
   }
 }
