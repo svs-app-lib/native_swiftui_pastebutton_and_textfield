@@ -70,7 +70,6 @@ class _NativePasteButtonWidgetState extends State<NativePasteButtonWidget> {
           height: widget.height,
           width: widget.width,
           child: UiKitView(
-
             viewType: channelUUID,
             layoutDirection: TextDirection.ltr,
             creationParamsCodec: const StandardMessageCodec(),
