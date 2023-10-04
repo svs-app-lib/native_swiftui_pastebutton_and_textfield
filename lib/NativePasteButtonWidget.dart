@@ -64,11 +64,11 @@ class _NativePasteButtonWidgetState extends State<NativePasteButtonWidget> {
         borderRadius: BorderRadius.circular(10),
       ),
       elevation: widget.elevation,
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(10),
-        child: SizedBox(
-          height: widget.height,
-          width: widget.width,
+      child: SizedBox(
+        height: widget.height,
+        width: widget.width,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(10),
           child: UiKitView(
             viewType: channelUUID,
             layoutDirection: TextDirection.ltr,

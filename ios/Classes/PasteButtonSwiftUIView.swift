@@ -33,6 +33,7 @@ struct PasteButtonSwiftUIView: View {
             self.buttonID = UUID().uuidString
         }
         .frame(width: self.width, height: self.height)
+        .edgesIgnoringSafeArea(.all) 
     }
     
 }

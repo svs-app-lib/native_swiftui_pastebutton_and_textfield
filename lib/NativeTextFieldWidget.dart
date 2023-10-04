@@ -43,16 +43,18 @@ class _NativeTextFieldWidgetState extends State<NativeTextFieldWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, dims) {
-      return SizedBox(
-        height: 35,
-        width: dims.maxWidth,
-        child: UiKitView(
-          viewType: channelUUID,
-          layoutDirection: TextDirection.ltr,
-          creationParamsCodec: const StandardMessageCodec(),
-        ),
-      );
-    });
+    return SizedBox(
+      height: 35,
+      child: LayoutBuilder(builder: (context, dims) {
+        return SizedBox(
+          width: dims.maxWidth,
+          child: UiKitView(
+            viewType: channelUUID,
+            layoutDirection: TextDirection.ltr,
+            creationParamsCodec: const StandardMessageCodec(),
+          ),
+        );
+      }),
+    );
   }
 }

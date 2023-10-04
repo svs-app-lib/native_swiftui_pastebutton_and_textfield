@@ -22,6 +22,7 @@ struct TextFieldSwiftUIView: View {
             self.method(self.textValue)
         }))
         .textFieldStyle(.roundedBorder)
+        .edgesIgnoringSafeArea(.all)
         
     }
 }
