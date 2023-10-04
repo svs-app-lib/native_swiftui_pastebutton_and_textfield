@@ -31,26 +31,26 @@ The package is designed with maximum adaptation to large screens.<br>
 Therefore, adding a widget to your screen will be very simple.
 ```dart
     Scaffold(
-      body: Row(
-        children: [
-          NativeTextFieldWidget(
-                          labelText: "write hint",
-                          onUpdated: (String? text) {
-                            print(text);
-                          },
-                        ),
-      NativePasteButtonWidget(
-                              width: 90,// default width
-                              height: 50,// default height
-                              color: Colors.redAccent,
-                              hasLabel: true,
-                              onPressed: (String? data) {
-                                print(text);
-                              },
-                            ),
-        ],
+      body: SafeArea(
+        child: Column(
+          children: [
+            NativeTextFieldWidget(
+                labelText: "write hint",
+                onUpdated: (String? text) {
+                  print(text);
+                }),
+            NativePasteButtonWidget(
+                width: 90, // default width
+                height: 50, // default height
+                color: Colors.redAccent,
+                hasLabel: true,
+                onPressed: (String? data) {
+                  print(data);
+                })
+          ],
+        ),
       ),
-    )
+    );
 ```
 
 ### Reasons to Use this Plugin in iOS Flutter Project
