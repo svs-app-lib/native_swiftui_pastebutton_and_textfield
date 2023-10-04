@@ -27,8 +27,7 @@ import 'package:native_swiftui_pastebutton_and_textfield/NativeTextFieldWidget.d
 ```
 
 ## Easy to use
-The package is designed with maximum adaptation to large screens.<br>
-Therefore, adding a widget to your screen will be very simple.
+
 ```dart
     Scaffold(
       body: SafeArea(
