@@ -17,17 +17,21 @@ public class NativeSwiftuiPastebuttonAndTextfieldPlugin: NSObject, FlutterPlugin
         case "makeTextFieldWidget":
             let widgetSeed = call.arguments as! [String : Any]
             let widgetUUID:String = widgetSeed["widgetUUID"] as! String
-            let factory = TextFieldFactory(messenger: registrar!.messenger(), seed: widgetSeed)
-            registrar!.register(factory, withId: widgetUUID)
+            let factory = TextFieldFactory(messenger: self.registrar!.messenger(), seed: widgetSeed)
+            self.registrar!.register(factory, withId: widgetUUID)
+            result(true)
             
         case "makePasteButtonWidget":
             let widgetSeed = call.arguments as! [String : Any]
             let widgetUUID:String = widgetSeed["widgetUUID"] as! String
-            let factory = PasteButtonFactory(messenger: registrar!.messenger(), seed: widgetSeed)
-            registrar!.register(factory, withId: widgetUUID)
+            let factory = PasteButtonFactory(messenger: self.registrar!.messenger(), seed: widgetSeed)
+            self.registrar!.register(factory, withId: widgetUUID)
+            result(true)
+            
         default:
             result(FlutterMethodNotImplemented)
         }
+        
     }
     
 }

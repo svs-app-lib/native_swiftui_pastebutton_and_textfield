@@ -27,16 +27,19 @@ class NativePasteButtonWidget extends StatefulWidget {
 }
 
 class _NativePasteButtonWidgetState extends State<NativePasteButtonWidget> {
-  Map<String, dynamic> seed = {};
   late final MethodChannel channelPasteButton;
   final String channelUUID =
       NativeSwiftuiPastebuttonAndTextfield.uuid.v4().toString();
+  bool nativeReady = false;
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     channelPasteButton = MethodChannel(channelUUID);
+    channelPasteButton.setMethodCallHandler((call) async {
+      widget.onPressed(call.arguments);
+    });
+    Map<String, dynamic> seed = {};
     seed["widgetUUID"] = channelUUID;
     seed["alpha"] = widget.color.alpha;
     seed["red"] = widget.color.red;
@@ -46,12 +49,12 @@ class _NativePasteButtonWidgetState extends State<NativePasteButtonWidget> {
     seed["width"] = widget.width;
     seed["height"] = widget.height;
 
-    NativeSwiftuiPastebuttonAndTextfieldPlatform.instance
-        .callNativePasteButton(seed);
-
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      channelPasteButton.setMethodCallHandler((call) async {
-        widget.onPressed(call.arguments);
+      NativeSwiftuiPastebuttonAndTextfieldPlatform.instance
+          .callNativeView('makePasteButtonWidget', seed, () {
+        setState(() {
+          nativeReady = true;
+        });
       });
     });
   }
@@ -67,14 +70,16 @@ class _NativePasteButtonWidgetState extends State<NativePasteButtonWidget> {
       child: SizedBox(
         height: widget.height,
         width: widget.width,
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(10),
-          child: UiKitView(
-            viewType: channelUUID,
-            layoutDirection: TextDirection.ltr,
-            creationParamsCodec: const StandardMessageCodec(),
-          ),
-        ),
+        child: nativeReady
+            ? ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: UiKitView(
+                  viewType: channelUUID,
+                  layoutDirection: TextDirection.ltr,
+                  creationParamsCodec: const StandardMessageCodec(),
+                ),
+              )
+            : const SizedBox(),
       ),
     );
   }

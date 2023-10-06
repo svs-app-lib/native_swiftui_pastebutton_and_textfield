@@ -35,7 +35,6 @@ struct PasteButtonSwiftUIView: View {
         .frame(width: self.width, height: self.height)
         .edgesIgnoringSafeArea(.all) 
     }
-    
 }
 
 extension View {

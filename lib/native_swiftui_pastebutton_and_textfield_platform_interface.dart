@@ -2,13 +2,15 @@ import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 import 'native_swiftui_pastebutton_and_textfield_method_channel.dart';
 
-abstract class NativeSwiftuiPastebuttonAndTextfieldPlatform extends PlatformInterface {
+abstract class NativeSwiftuiPastebuttonAndTextfieldPlatform
+    extends PlatformInterface {
   /// Constructs a NativeSwiftuiPastebuttonAndTextfieldPlatform.
   NativeSwiftuiPastebuttonAndTextfieldPlatform() : super(token: _token);
 
   static final Object _token = Object();
 
-  static NativeSwiftuiPastebuttonAndTextfieldPlatform _instance = MethodChannelNativeSwiftuiPastebuttonAndTextfield();
+  static NativeSwiftuiPastebuttonAndTextfieldPlatform _instance =
+      MethodChannelNativeSwiftuiPastebuttonAndTextfield();
 
   /// The default instance of [NativeSwiftuiPastebuttonAndTextfieldPlatform] to use.
   ///
@@ -23,10 +25,9 @@ abstract class NativeSwiftuiPastebuttonAndTextfieldPlatform extends PlatformInte
     _instance = instance;
   }
 
-  void callNativePasteButton(Map<String, dynamic> widgetSeed) {
-    throw UnimplementedError('callNativePasteButton() has not been implemented.');
+  void callNativeView(
+      String methodName, Map<String, dynamic> widgetSeed, Function update) {
+    throw UnimplementedError('callNativeView has not been implemented.');
   }
-  void callNativeTextField(Map<String, dynamic> widgetSeed) {
-    throw UnimplementedError('callNativePasteButton() has not been implemented.');
-  }
+
 }
