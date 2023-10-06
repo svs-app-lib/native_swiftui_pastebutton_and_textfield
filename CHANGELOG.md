@@ -22,3 +22,6 @@
 
 ## 1.0.6
 * changed readme.md
+
+## 1.0.7
+* modified the calling of the iOS native methods to be asynchronous.
